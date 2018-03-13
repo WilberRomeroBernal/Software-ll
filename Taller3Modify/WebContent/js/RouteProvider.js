@@ -5,7 +5,9 @@
 var app=angular.module('adminUniversidad', [
   'ngRoute',
   'angularUtils.directives.dirPagination',
-  'adminUniversidad.controllers'
+  'adminUniversidad.controllers',
+  'ngMaterial', 
+  'ngMessages'
 ]);
 app.config(['$routeProvider', function($routeProvider) {
 	$routeProvider.when('/Facultad', {templateUrl: 'partials/Facultad.html', controller: 'FacultadCtrl'});

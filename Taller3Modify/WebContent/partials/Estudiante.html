@@ -39,7 +39,7 @@
                 <td>{{row.apellidos}}</td>
                 <td>{{row.codigo}}</td>
                 <td>{{row.documento}}</td>
-                <td>{{row.fechaNacimiento}}</td>
+                <td>{{row.fechaNacimiento| date:'dd/MMM/yyyy'}}</td>
                 <td>{{row.municipio.nombre}}</td>
                 <td>{{row.carrera.nombre}}</td>
 
@@ -101,15 +101,9 @@
                 <div class="form-group col-md-6" ng-class="errores.FechaNacimiento ? 'error' : ''">
                     <label for="FechaNacimiento">Fecha de nacimiento</label>
                     <div class="input-group">
-                        <input id="FechaNacimiento" 
-                               class="form-control datepicker" 
-                               type="text" 
-                               ng-model="datosFormulario.FechaNacimiento"/>
+                    <md-datepicker ng-model="datosFormulario.fechaNacimiento" md-placeholder="Ingrese fecha"></md-datepicker>
                         <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
                     </div>
-                    <script>
-                                $('#FechaNacimiento').datepicker({format: 'dd/mm/yyyy', language: "es"}).data('datepicker');
-                    </script>
                     <div ng-show="errores.FechaNacimiento">{{errores.FechaNacimiento}}</div>
                 </div>
        
